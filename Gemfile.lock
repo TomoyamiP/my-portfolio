@@ -24,6 +24,8 @@ GEM
     fastimage (2.3.1)
     ffi (1.17.0-arm64-darwin)
     ffi (1.17.0-x86_64-darwin)
+    font-awesome-sass (6.5.2)
+      sassc (~> 2.0)
     haml (6.3.0)
       temple (>= 0.8.2)
       thor
@@ -109,6 +111,7 @@ PLATFORMS
   x86_64-darwin-22
 
 DEPENDENCIES
+  font-awesome-sass (~> 6.5.2)
   middleman
   middleman-autoprefixer (~> 3.0)
   tzinfo-data
