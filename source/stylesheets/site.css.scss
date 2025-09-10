@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h6 {
 * { box-sizing: border-box; }
 .container { max-width:1100px; margin:0 auto; padding:0 20px; }
 
-.section { margin: 22px 0; padding: 18px; }
+.section { margin: 6px 0; padding: 7px; }
 .section h2 { margin: 0 0 12px; font-size: 22px; }
 
 .card-soft {
@@ -60,12 +60,14 @@ h1, h2, h3, h4, h5, h6 {
 
 // ===== Top bar
 .topbar {
-  background: rgba(14,15,18,.7);
-  border: 1px solid var(--line);
+  background: rgba(14,15,18,.7);  /* keep translucent background */
+  border: none;                   /* remove border */
   border-radius: 14px;
   padding: 12px 16px;
-  display: flex; align-items: center; justify-content: space-between;
-  margin: 16px 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 8px 0 16px;             /* tighter vertical space */
 }
 .topbar .name { font-weight: 800; letter-spacing:.2px; }
 .topbar nav a { margin: 0 10px; opacity:.9; text-decoration:none; color: var(--text); }
@@ -87,10 +89,35 @@ h1, h2, h3, h4, h5, h6 {
 .socials a:hover svg { transform:scale(1.15); opacity:1; }
 
 // ===== About card
-.about-card { display:grid; grid-template-columns: 110px 1fr; gap:16px; align-items:start; }
-@media (max-width:640px){ .about-card { grid-template-columns: 1fr; } }
-.about-card .avatar { width:110px; height:110px; border-radius:16px; object-fit:cover; background:#0b0c0f; border:1px solid var(--line); }
-.about-card p { text-align: justify; text-justify: inter-word; }
+/* About card */
+.about-card {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 16px;
+  align-items: start;
+  padding: 16px 16px 8px 12px;  /* top=16px, right=16px, bottom=8px, left=12px */
+}
+
+@media (max-width: 640px) {
+  .about-card {
+    grid-template-columns: 1fr;
+    padding: 16px 12px 8px;  /* balanced padding on mobile */
+  }
+}
+
+.about-card .avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 16px;
+  object-fit: cover;
+  background: #0b0c0f;
+  border: 1px solid var(--line);
+}
+
+.about-card p {
+  text-align: justify;
+  text-justify: inter-word;
+}
 
 // ===== Skills pills
 .pills { display:flex; flex-wrap:wrap; gap:10px; }
@@ -179,3 +206,18 @@ h1, h2, h3, h4, h5, h6 {
 .shots-pag { margin: 8px 0 0; display: flex; justify-content: center; }
 .shots-pag .swiper-pagination-bullet { background: #667; opacity: .6; }
 .shots-pag .swiper-pagination-bullet-active { background: var(--accent); opacity: 1; }
+
+/* Cards with consistent padding: About, Skills, Resume */
+.about-card,
+#skills,
+#resume {
+  padding: 16px 16px 8px 12px;  /* top=16, right=16, bottom=8, left=12 */
+}
+
+@media (max-width: 640px) {
+  .about-card,
+  #skills,
+  #resume {
+    padding: 16px 12px 8px;  /* balanced padding on mobile */
+  }
+}
