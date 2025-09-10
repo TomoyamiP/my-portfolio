@@ -228,3 +228,6 @@ h1, h2, h3, h4, h5, h6 {
 .projects-compact .section-head {
   margin-bottom: 16px; /* adjust this value (12–20px) to taste */
 }
+
+.projects-swiper { width: 100%; }
+.projects-swiper .swiper-slide { height: auto; } /* let the card define height */

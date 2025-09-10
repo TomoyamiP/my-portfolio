@@ -38,104 +38,119 @@
             When I’m not coding, I’m parenting a high-energy 4-year-old, cycling Tokyo’s backstreets, seeking out craft beer spots, or recharging on camping and hiking trips across the Japanese countryside.</p>
         </div>
       </section>
-      <!-- Projects (compact; each project has its own screenshot carousel) -->
+      <!-- Projects (outer carousel with nested per-project screenshot carousels) -->
       <section id="projects" class="section card-soft projects-compact">
         <div class="section-head" style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
           <h2 style="margin:0;">Projects</h2>
+          <div class="nav-wrap" style="display:flex;align-items:center;gap:10px;">
+            <button class="proj-prev btn" aria-label="Previous">‹</button>
+            <button class="proj-next btn" aria-label="Next">›</button>
+          </div>
         </div>
-        <!-- Project: PureComm -->
-        <article class="proj-card flat">
-          <!-- Title -->
-          <div class="proj-min" style="padding-bottom: 8px;">
-            <h3>PureComm</h3>
-          </div>
-          <!-- Screenshots carousel -->
-          <div class="swiper shots-swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide"><img class="shot" src="https://res.cloudinary.com/dt4jctqz1/image/upload/v1757422983/IMG_4349_iamsgm.png" data-full="https://res.cloudinary.com/dt4jctqz1/image/upload/v1757422983/IMG_4349_iamsgm.png" alt="PureComm screenshot 1"></div>
-              <div class="swiper-slide"><img class="shot" src="https://res.cloudinary.com/dt4jctqz1/image/upload/v1757422725/IMG_4342_bcgdb9.png" data-full="https://res.cloudinary.com/dt4jctqz1/image/upload/v1757422725/IMG_4342_bcgdb9.png" alt="PureComm screenshot 2"></div>
-              <div class="swiper-slide"><img class="shot" src="https://res.cloudinary.com/dt4jctqz1/image/upload/v1757422725/IMG_4339_bfthte.png" data-full="https://res.cloudinary.com/dt4jctqz1/image/upload/v1757422725/IMG_4339_bfthte.png" alt="PureComm screenshot 3"></div>
-              <div class="swiper-slide"><img class="shot" src="https://res.cloudinary.com/dt4jctqz1/image/upload/v1757422725/IMG_4340_gew7gi.png" data-full="https://res.cloudinary.com/dt4jctqz1/image/upload/v1757422725/IMG_4340_gew7gi.png" alt="PureComm screenshot 4"></div>
-              <div class="swiper-slide"><img class="shot" src="https://res.cloudinary.com/dt4jctqz1/image/upload/v1757422725/IMG_4341_fh1vxu.png" data-full="https://res.cloudinary.com/dt4jctqz1/image/upload/v1757422725/IMG_4341_fh1vxu.png" alt="PureComm screenshot 5"></div>
+        <div class="swiper projects-swiper">
+          <div class="swiper-wrapper">
+            <!-- Slide: PureComm -->
+            <div class="swiper-slide">
+              <article class="proj-card flat">
+                <div class="proj-min" style="padding-bottom: 8px;">
+                  <h3>PureComm</h3>
+                </div>
+                <div class="swiper shots-swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img class="shot" src="https://res.cloudinary.com/dt4jctqz1/image/upload/v1757422983/IMG_4349_iamsgm.png" data-full="https://res.cloudinary.com/dt4jctqz1/image/upload/v1757422983/IMG_4349_iamsgm.png" alt="PureComm screenshot 1"></div>
+                    <div class="swiper-slide"><img class="shot" src="https://res.cloudinary.com/dt4jctqz1/image/upload/v1757422725/IMG_4342_bcgdb9.png" data-full="https://res.cloudinary.com/dt4jctqz1/image/upload/v1757422725/IMG_4342_bcgdb9.png" alt="PureComm screenshot 2"></div>
+                    <div class="swiper-slide"><img class="shot" src="https://res.cloudinary.com/dt4jctqz1/image/upload/v1757422725/IMG_4339_bfthte.png" data-full="https://res.cloudinary.com/dt4jctqz1/image/upload/v1757422725/IMG_4339_bfthte.png" alt="PureComm screenshot 3"></div>
+                    <div class="swiper-slide"><img class="shot" src="https://res.cloudinary.com/dt4jctqz1/image/upload/v1757422725/IMG_4340_gew7gi.png" data-full="https://res.cloudinary.com/dt4jctqz1/image/upload/v1757422725/IMG_4340_gew7gi.png" alt="PureComm screenshot 4"></div>
+                    <div class="swiper-slide"><img class="shot" src="https://res.cloudinary.com/dt4jctqz1/image/upload/v1757422725/IMG_4341_fh1vxu.png" data-full="https://res.cloudinary.com/dt4jctqz1/image/upload/v1757422725/IMG_4341_fh1vxu.png" alt="PureComm screenshot 5"></div>
+                  </div>
+                  <div class="shots-pag"></div>
+                </div>
+                <div class="proj-min">
+                  <p class="role">Lead Developer · Product & UX Design (Figma)</p>
+                </div>
+                <details class="proj-details">
+                  <summary>Details</summary>
+                  <p><strong>PureComm</strong> is a couples communication app designed to lower daily friction. It combines quick mood check-ins, a private “grievance drop,” and an AI coach to help partners surface issues, reflect, and resolve with less guesswork.</p>
+                  <ul class="proj-meta">
+                    <li><strong>Highlights:</strong> Daily mood check-ins · private grievance drop · AI coach with adjustable tone · revisit reminders · severity & tag system · demo-friendly deterministic seeds.</li>
+                    <li><strong>UX / Product:</strong> I led the full product design in Figma, creating all screens and flows (onboarding, mood check-ins, grievance drop and coach chat). I implemented the Harmony Coach AI with a custom persona system that adapts guidance based on each user’s personality and temperament, ensuring a more empathetic and tailored experience.</li>
+                    <li><strong>Tech Stack:</strong> Ruby on Rails · Stimulus (JS) · Bootstrap · Cloudinary (assets) · OpenAI API (coach) · Heroku (deploy).</li>
+                  </ul>
+                  <div class="actions">
+                    <a class="btn" href="https://purecomm-44227c50794a.herokuapp.com/" target="_blank" rel="noopener">Live demo</a>
+                    <a class="link" href="https://github.com/your-username/purecomm" target="_blank" rel="noopener">Code</a>
+                  </div>
+                </details>
+              </article>
             </div>
-            <div class="shots-pag"></div>
-          </div>
-          <!-- Role -->
-          <div class="proj-min">
-            <p class="role">Lead Developer · UI/UX (Figma)</p>
-          </div>
-          <!-- Details -->
-          <details class="proj-details">
-            <summary>Details</summary>
-            <p>Mood check-ins, grievance workflow, and an AI coach to reduce daily friction.</p>
-            <ul class="proj-meta">
-              <li><strong>Stack:</strong> Ruby on Rails, Stimulus/JS, Bootstrap, Cloudinary, OpenAI API</li>
-            </ul>
-            <div class="actions">
-              <a class="btn" href="https://purecomm-44227c50794a.herokuapp.com/" target="_blank" rel="noopener">Live demo</a>
-              <a class="link" href="https://github.com/your-username/purecomm" target="_blank" rel="noopener">Code</a>
+            <!-- Slide: LyricLab -->
+            <div class="swiper-slide">
+              <article class="proj-card flat">
+                <div class="proj-min" style="padding-bottom: 8px;">
+                  <h3>LyricLab</h3>
+                </div>
+                <div class="swiper shots-swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img class="shot" src="images/lyriclab-1.jpg" data-full="images/lyriclab-1.jpg" alt="LyricLab screenshot 1"></div>
+                    <div class="swiper-slide"><img class="shot" src="images/lyriclab-2.jpg" data-full="images/lyriclab-2.jpg" alt="LyricLab screenshot 2"></div>
+                    <div class="swiper-slide"><img class="shot" src="images/lyriclab-3.jpg" data-full="images/lyriclab-3.jpg" alt="LyricLab screenshot 3"></div>
+                  </div>
+                  <div class="shots-pag"></div>
+                </div>
+                <div class="proj-min">
+                  <p class="role">Product & Frontend · UX (Figma)</p>
+                </div>
+                <details class="proj-details">
+                  <summary>Details</summary>
+                  <p>Generate lyrics by mood/genre with LyriBot, upload prompts, and share songs.</p>
+                  <ul class="proj-meta">
+                    <li><strong>Stack:</strong> Rails, Stimulus/JS, OpenAI API, Active Storage</li>
+                  </ul>
+                  <div class="actions">
+                    <a class="btn" href="#" target="_blank" rel="noopener">Live demo</a>
+                    <a class="link" href="https://github.com/your-username/lyriclab" target="_blank" rel="noopener">Code</a>
+                  </div>
+                </details>
+              </article>
             </div>
-          </details>
-        </article>
-        <!-- Project: LyricLab -->
-        <article class="proj-card flat">
-          <div class="proj-min" style="padding-bottom: 8px;">
-            <h3>LyricLab</h3>
-          </div>
-          <div class="swiper shots-swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide"><img class="shot" src="images/lyriclab-1.jpg" data-full="images/lyriclab-1.jpg" alt="LyricLab screenshot 1"></div>
-              <div class="swiper-slide"><img class="shot" src="images/lyriclab-2.jpg" data-full="images/lyriclab-2.jpg" alt="LyricLab screenshot 2"></div>
-              <div class="swiper-slide"><img class="shot" src="images/lyriclab-3.jpg" data-full="images/lyriclab-3.jpg" alt="LyricLab screenshot 3"></div>
+            <!-- Slide: Portfolio -->
+            <div class="swiper-slide">
+              <article class="proj-card flat">
+                <div class="proj-min" style="padding-bottom: 8px;">
+                  <h3>Portfolio</h3>
+                </div>
+                <div class="swiper shots-swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img class="shot" src="images/portfolio-1.jpg" data-full="images/portfolio-1.jpg" alt="Portfolio screenshot 1"></div>
+                    <div class="swiper-slide"><img class="shot" src="images/portfolio-2.jpg" data-full="images/portfolio-2.jpg" alt="Portfolio screenshot 2"></div>
+                    <div class="swiper-slide"><img class="shot" src="images/portfolio-3.jpg" data-full="images/portfolio-3.jpg" alt="Portfolio screenshot 3"></div>
+                  </div>
+                  <div class="shots-pag"></div>
+                </div>
+                <div class="proj-min">
+                  <p class="role">Designer / Developer</p>
+                </div>
+                <details class="proj-details">
+                  <summary>Details</summary>
+                  <p>Static site built with Middleman. Card system, 2-column layout, and inline SVG icons.</p>
+                  <ul class="proj-meta">
+                    <li><strong>Stack:</strong> Middleman, ERB, SCSS, Inter/Raleway</li>
+                  </ul>
+                  <div class="actions">
+                    <a class="btn" href="#" target="_blank" rel="noopener">Live</a>
+                    <a class="link" href="https://github.com/TomoyamiP/middleman-template" target="_blank" rel="noopener">Code</a>
+                  </div>
+                </details>
+              </article>
             </div>
-            <div class="shots-pag"></div>
           </div>
-          <div class="proj-min">
-            <p class="role">Product & Frontend · UX (Figma)</p>
-          </div>
-          <details class="proj-details">
-            <summary>Details</summary>
-            <p>Generate lyrics by mood/genre with LyriBot, upload prompts, and share songs.</p>
-            <ul class="proj-meta">
-              <li><strong>Stack:</strong> Rails, Stimulus/JS, OpenAI API, Active Storage</li>
-            </ul>
-            <div class="actions">
-              <a class="btn" href="#" target="_blank" rel="noopener">Live demo</a>
-              <a class="link" href="https://github.com/your-username/lyriclab" target="_blank" rel="noopener">Code</a>
-            </div>
-          </details>
-        </article>
-        <!-- Project: Portfolio -->
-        <article class="proj-card flat">
-          <div class="proj-min" style="padding-bottom: 8px;">
-            <h3>Portfolio</h3>
-          </div>
-          <div class="swiper shots-swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide"><img class="shot" src="images/portfolio-1.jpg" data-full="images/portfolio-1.jpg" alt="Portfolio screenshot 1"></div>
-              <div class="swiper-slide"><img class="shot" src="images/portfolio-2.jpg" data-full="images/portfolio-2.jpg" alt="Portfolio screenshot 2"></div>
-              <div class="swiper-slide"><img class="shot" src="images/portfolio-3.jpg" data-full="images/portfolio-3.jpg" alt="Portfolio screenshot 3"></div>
-            </div>
-            <div class="shots-pag"></div>
-          </div>
-          <div class="proj-min">
-            <p class="role">Designer / Developer</p>
-          </div>
-          <details class="proj-details">
-            <summary>Details</summary>
-            <p>Static site built with Middleman. Card system, 2-column layout, and inline SVG icons.</p>
-            <ul class="proj-meta">
-              <li><strong>Stack:</strong> Middleman, ERB, SCSS, Inter/Raleway</li>
-            </ul>
-            <div class="actions">
-              <a class="btn" href="#" target="_blank" rel="noopener">Live</a>
-              <a class="link" href="https://github.com/TomoyamiP/middleman-template" target="_blank" rel="noopener">Code</a>
-            </div>
-          </details>
-        </article>
+          <!-- Outer carousel pagination -->
+          <div class="proj-pag" style="margin-top:8px;"></div>
+        </div>
       </section>
     </div>
-    <!-- Sidebar -->
+ <!-- END main column -->
+    <!-- Sidebar (sibling of main column) -->
     <aside>
       <!-- Skills -->
       <section id="skills" class="section card-soft">
@@ -160,4 +175,5 @@
       </section>
     </aside>
   </div>
+ <!-- END layout-2col -->
 </div>
