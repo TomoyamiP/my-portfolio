@@ -267,3 +267,28 @@ p, .proj-meta, .proj-details p, .resume-cta span {
   box-shadow: 0 6px 20px rgba(0,0,0,.35);
   filter: grayscale(0%); /* bring color back on hover */
 }
+
+/* Outer projects carousel bullets (custom classes) */
+.proj-pag {
+  margin-top: 4px;   /* tighter gap under card */
+  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.proj-pag .proj-bullet {
+  display: inline-block;      /* important: let width/height apply */
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 3px;
+  background: #667;          /* inactive gray */
+  opacity: 0.6;
+  transition: transform .2s ease, opacity .2s ease, background .2s ease;
+}
+
+.proj-pag .proj-bullet.proj-bullet-active {
+  background: var(--accent) !important;  /* yellow */
+  opacity: 1;
+  transform: scale(1.15);
+}
