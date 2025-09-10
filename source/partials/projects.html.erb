@@ -54,10 +54,10 @@
                 <!-- Yellow, centered action buttons -->
                 <div class="actions">
                   <% if project.live_url.present? %>
-                    <a class="project-link" href="<%= project.live_url %>" target="_blank" rel="noopener">Live demo</a>
+                    <a class="project-btn" href="<%= project.live_url %>" target="_blank" rel="noopener">Live demo</a>
                   <% end %>
                   <% if project.code_url.present? %>
-                    <a class="project-link" href="<%= project.code_url %>" target="_blank" rel="noopener">Code</a>
+                    <a class="project-btn" href="<%= project.code_url %>" target="_blank" rel="noopener">Code</a>
                   <% end %>
                 </div>
               </details>

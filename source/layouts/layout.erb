@@ -33,11 +33,6 @@
   </head>
   <body>
     <%= yield %>
-    <footer class="footer">
-      <div class="container">
-        <span>© <span id="year"></span> Paul Miyamoto</span>
-      </div>
-    </footer>
     <!-- Lightbox root (click backdrop or button to close) -->
     <div id="lightbox" class="lightbox" aria-hidden="true">
       <button class="lb-close" type="button" aria-label="Close">Close ✕</button>
@@ -46,9 +41,6 @@
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script>
-      // Footer year
-      document.getElementById('year').textContent = new Date().getFullYear();
-
       document.addEventListener('DOMContentLoaded', () => {
         // ---------- OUTER: projects carousel (one slide per project)
         new Swiper('.projects-swiper', {

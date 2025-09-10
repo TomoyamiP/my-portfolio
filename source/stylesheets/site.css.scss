@@ -6,33 +6,38 @@
 @import "components/index";
 @import "pages/index";
 
-// ===== Theme Variables
-:root {
-  /* Palette */
+/* =========================================================
+   THEME TOKENS
+========================================================= */
+:root{
   --color-bg: #0e0f12;
-  --color-text: #e9edf1;       /* bright text (headings, titles) */
-  --color-muted: #a8b0bc;      /* muted gray (descriptions) */
+  --color-text: #e9edf1;     /* headings / strong text */
+  --color-muted: #a8b0bc;    /* descriptions / fine text */
   --color-card: #16181d;
   --color-line: #262a31;
-  --color-accent: #ffd166;     /* highlight yellow */
+  --color-accent: #ffd166;   /* yellow */
+  --color-blue: #3b82f6;     /* blue on hover */
 
-  /* Typography */
   --font-body: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   --font-heading: 'Raleway', sans-serif;
+
   --fs-base: 16px;
   --fs-small: 14px;
   --fs-h2: 22px;
 
-  /* Radius & Shadows */
   --radius-lg: 18px;
   --radius-md: 10px;
+
   --shadow-card: 0 6px 20px rgba(0,0,0,.25);
 }
 
-// ===== Base Typography
-html, body {
-  margin: 0;
-  padding: 0;
+/* =========================================================
+   BASE TYPOGRAPHY & LAYOUT
+========================================================= */
+* { box-sizing: border-box; }
+
+html, body{
+  margin: 0; padding: 0;
   font-family: var(--font-body);
   font-size: var(--fs-base);
   line-height: 1.6;
@@ -41,42 +46,40 @@ html, body {
   color: var(--color-text);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6{
   font-family: var(--font-heading);
   font-weight: 700;
-  letter-spacing: 0.5px;
+  letter-spacing: .5px;
   color: var(--color-text);
 }
 
-p, .proj-meta, .proj-details p, .resume-cta span {
-  color: var(--color-muted);
-}
+p, .proj-meta, .proj-details p, .resume-cta span{ color: var(--color-muted); }
 
-// ===== Layout Helpers
-* { box-sizing: border-box; }
-.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+.container{ max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-.section { margin: 6px 0; padding: 7px; }
-.section h2 { margin: 0 0 12px; font-size: var(--fs-h2); }
+.section{ margin: 6px 0; padding: 7px; }
+.section h2{ margin: 0 0 12px; font-size: var(--fs-h2); }
 
-.card-soft {
+.card-soft{
   background: var(--color-card);
   border: 1px solid var(--color-line);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-card);
 }
 
-/* Grid Layout */
-.layout-2col {
+/* 2-col layout */
+.layout-2col{
   display: grid;
   grid-template-columns: 1.8fr .9fr;
   gap: 24px;
 }
-.layout-2col > * { min-width: 0; }
-@media (max-width: 960px) { .layout-2col { grid-template-columns: 1fr; } }
+.layout-2col > *{ min-width: 0; }
+@media (max-width: 960px){ .layout-2col{ grid-template-columns: 1fr; } }
 
-// ===== Top Bar
-.topbar {
+/* =========================================================
+   TOP BAR
+========================================================= */
+.topbar{
   background: rgba(14,15,18,.7);
   border: none;
   border-radius: 14px;
@@ -84,17 +87,17 @@ p, .proj-meta, .proj-details p, .resume-cta span {
   display: flex; align-items: center; justify-content: space-between;
   margin: 8px 0 16px;
 }
-.topbar .name { font-weight: 800; letter-spacing: .2px; }
-.topbar nav a {
-  margin: 0 10px;
-  opacity: .9;
-  color: var(--color-text);
+.topbar .name{ font-weight: 800; letter-spacing: .2px; }
+.topbar nav a{
+  margin: 0 10px; opacity: .9; color: var(--color-text);
   text-decoration: none;
 }
-.topbar nav a:hover { opacity: 1; }
+.topbar nav a:hover{ opacity: 1; }
 
-// ===== Links & Buttons
-.btn {
+/* =========================================================
+   LINKS & BUTTONS (GLOBAL)
+========================================================= */
+.btn{
   display: inline-block;
   background: var(--color-accent);
   color: #111;
@@ -103,92 +106,115 @@ p, .proj-meta, .proj-details p, .resume-cta span {
   font-weight: 700;
   text-decoration: none;
 }
-.link {
+
+.link{
   color: var(--color-text);
   opacity: .9;
   border-bottom: 1px solid rgba(233,237,241,.25);
   text-decoration: none;
   padding-bottom: 2px;
 }
-.link:hover { opacity: 1; border-bottom-color: rgba(233,237,241,.6); }
+.link:hover{
+  opacity: 1;
+  border-bottom-color: rgba(233,237,241,.6);
+}
 
-// ===== Social Icons
-.socials { display: flex; gap: 12px; }
-.socials a svg {
+/* =========================================================
+   SOCIAL ICONS
+========================================================= */
+.socials{ display: flex; gap: 12px; }
+.socials a svg{
   width: 22px; height: 22px; opacity: .9;
   transition: transform .2s, opacity .2s;
 }
-.socials a:hover svg { transform: scale(1.15); opacity: 1; color: var(--accent); }
+.socials a:hover svg{ transform: scale(1.15); opacity: 1; }
 
-// ===== About Section
-.about-card {
+/* =========================================================
+   ABOUT
+========================================================= */
+.about-card{
   display: grid;
   grid-template-columns: 110px 1fr;
   gap: 16px; align-items: start;
   padding: 16px 16px 8px 12px;
 }
-.about-card .avatar {
+.about-card .avatar{
   width: 110px; height: 110px;
   border-radius: 16px; object-fit: cover;
   background: #0b0c0f; border: 1px solid var(--color-line);
 }
-.about-card p { text-align: justify; text-justify: inter-word; }
-@media (max-width: 640px) {
-  .about-card { grid-template-columns: 1fr; padding: 16px 12px 8px; }
+.about-card p{ text-align: justify; text-justify: inter-word; }
+
+@media (max-width: 640px){
+  .about-card{ grid-template-columns: 1fr; padding: 16px 12px 8px; }
 }
 
-/* ===== Skills ===== */
-.skill-group {
+/* =========================================================
+   SKILLS
+========================================================= */
+.skill-group{
   margin: 16px 0 8px;
   font-size: var(--fs-small);
   font-weight: 600;
-  color: var(--color-muted); /* gray for categories */
+  color: var(--color-muted); /* category labels = gray */
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: .5px;
 }
-
-.pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.pill {
+.pills{ display: flex; flex-wrap: wrap; gap: 10px; }
+.pill{
   padding: 8px 12px;
   border-radius: 999px;
   border: 1px solid var(--color-line);
-  background: rgba(255,255,255,0.02);
-  color: var(--color-text); /* white-ish for pill text */
+  background: rgba(255,255,255,.02);
+  color: var(--color-text); /* pill text = white-ish */
   font-size: 13px;
 }
 
-// ===== Resume
-.resume-cta { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-.resume-link {
-  font-weight: 600;
-  color: var(--color-accent);
-  font-size: var(--fs-small);
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: all .2s;
-}
-.resume-link:hover { border-bottom: 1px solid var(--color-accent); opacity: .9; }
+/* =========================================================
+   RESUME LINK (and unified “sleek” project links)
+   Default: yellow text. Hover: blue text + yellow underline + scale.
+========================================================= */
+.resume-cta{ display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 
-// ===== Contact
-.contact-links {
+.resume-link,
+.section.projects-compact .proj-card .proj-details .actions a.project-btn{
+  display: inline-block;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--color-accent);                 /* yellow text by default */
+  text-decoration: none;
+  border-bottom: 2px solid transparent;       /* hidden until hover */
+  transition: color .2s ease, transform .2s ease, border-bottom-color .2s ease, opacity .2s ease;
+}
+.resume-link:hover,
+.section.projects-compact .proj-card .proj-details .actions a.project-btn:hover{
+  color: var(--color-blue);                   /* blue text on hover */
+  border-bottom-color: var(--color-accent);   /* yellow underline on hover */
+  transform: scale(1.05);
+  opacity: .95;
+}
+
+/* =========================================================
+   CONTACT ROW (separate from socials)
+========================================================= */
+.contact-links{
   display: flex; gap: 20px; margin: 20px 0; justify-content: center;
 }
-.contact-links a svg { transition: transform .2s, opacity .2s; opacity: .95; }
-.contact-links a:hover svg { transform: scale(1.2); opacity: 1; }
+.contact-links a svg{ transition: transform .2s, opacity .2s; opacity: .95; }
+.contact-links a:hover svg{ transform: scale(1.2); opacity: 1; }
 
-// ===== Footer
-.footer { border-top: 1px solid var(--color-line); padding: 22px 0; color: var(--color-muted); }
+/* =========================================================
+   FOOTER
+========================================================= */
+.footer{ border-top: 1px solid var(--color-line); padding: 22px 0; color: var(--color-muted); }
 
-// ===== Projects
-.projects-compact { padding: 16px; }
-.projects-compact .section-head { margin-bottom: 16px; }
+/* =========================================================
+   PROJECTS
+========================================================= */
+.projects-compact{ padding: 16px; }
+.projects-compact .section-head{ margin-bottom: 16px; }
 
-.proj-card.flat {
+.proj-card.flat{
   background: var(--color-card);
   border: 1px solid var(--color-line);
   border-radius: var(--radius-lg);
@@ -196,328 +222,93 @@ p, .proj-meta, .proj-details p, .resume-cta span {
   overflow: hidden;
 }
 
-/* Carousels */
-.shots-swiper { width: 100%; }
-.shots-swiper .swiper-wrapper { align-items: stretch; }
-.shots-swiper .swiper-slide {
+/* Per-project carousel */
+.shots-swiper{ width: 100%; }
+.shots-swiper .swiper-wrapper{ align-items: stretch; }
+.shots-swiper .swiper-slide{
   display: flex; align-items: flex-start; justify-content: center;
 }
 
-/* Screenshots */
-.shot {
+/* Screenshot thumbnails (B&W until hover) */
+.shot{
   width: 100%; height: 180px;
   object-fit: cover; object-position: top;
   background: #0b0c0f; border-radius: 8px;
   cursor: zoom-in;
-  transition: transform .18s, box-shadow .18s, opacity .18s;
+  transition: transform .18s ease, box-shadow .18s ease, opacity .18s ease, filter .3s ease;
+  filter: grayscale(100%);
 }
-.shot:hover { transform: scale(1.03); box-shadow: 0 6px 20px rgba(0,0,0,.35); }
+.shot:hover{
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0,0,0,.35);
+  filter: grayscale(0%);
+}
 
-/* Project Text */
-.proj-min { padding: 12px 14px; }
-.proj-min h3 { margin: 0 0 4px; font-size: 18px; }
-.proj-min .role { margin: 0; color: var(--color-muted); font-size: var(--fs-small); }
+/* Project text */
+.proj-min{ padding: 12px 14px; }
+.proj-min h3{ margin: 0 0 4px; font-size: 18px; }
+.proj-min .role{ margin: 0; color: var(--color-muted); font-size: var(--fs-small); }
 
-/* Details Drawer */
-.proj-details { padding: 0 14px 12px; }
-.proj-details summary { cursor: pointer; padding: 8px 0; opacity: .95; }
-.proj-details summary::after { content: "＋"; margin-left: 8px; opacity: .6; }
-.proj-details[open] summary::after { content: "－"; }
-.proj-meta { margin: 0; padding-left: 18px; font-size: var(--fs-small); color: #d6dde7; }
+/* Details */
+.proj-details{ padding: 0 14px 12px; }
+.proj-details summary{ cursor: pointer; padding: 8px 0; opacity: .95; }
+.proj-details summary::after{ content: "＋"; margin-left: 8px; opacity: .6; }
+.proj-details[open] summary::after{ content: "－"; }
+.proj-meta{ margin: 0; padding-left: 18px; font-size: var(--fs-small); color: #d6dde7; }
 
-/* Pagination Dots */
-.shots-pag .swiper-pagination-bullet,
-.proj-pag .swiper-pagination-bullet {
+/* Project actions row (centered) */
+.proj-details .actions{
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 12px;
+}
+
+/* Shots pagination (default Swiper bullets) */
+.shots-pag{ margin-top: 8px; display: flex; justify-content: center; }
+.shots-pag .swiper-pagination-bullet{
   background: #667; opacity: .6; transition: all .2s;
 }
-.shots-pag .swiper-pagination-bullet-active,
-.proj-pag .swiper-pagination-bullet-active {
+.shots-pag .swiper-pagination-bullet-active{
   background: var(--color-accent); opacity: 1; transform: scale(1.1);
 }
 
-/* Consistent Padding */
-.about-card, #skills, #resume { padding: 16px 16px 8px 12px; }
-@media (max-width: 640px) {
-  .about-card, #skills, #resume { padding: 16px 12px 8px; }
+/* Outer projects pagination (custom bullets via renderBullet) */
+.proj-pag{
+  margin-top: 4px; margin-bottom: 0;
+  display: flex; justify-content: center;
 }
-
-/* Safe hover color for outer carousel nav buttons */
-.projects-compact .nav-wrap .proj-prev:hover,
-.projects-compact .nav-wrap .proj-next:hover {
-  color: #3b82f6 !important;        /* blue text/chevron */
-  border-color: #3b82f6 !important; /* match border */
-  background: transparent !important; /* don't change layout/size */
-}
-
-/* Screenshot thumbnails */
-.shot {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  object-position: top;
-  background: #0b0c0f;
-  border-radius: 8px;
-  cursor: zoom-in;
-  transition: transform .18s ease, box-shadow .18s ease, opacity .18s ease, filter .3s ease;
-  filter: grayscale(100%); /* 🔥 make all screenshots B&W */
-}
-
-.shot:hover {
-  transform: scale(1.03);
-  box-shadow: 0 6px 20px rgba(0,0,0,.35);
-  filter: grayscale(0%); /* bring color back on hover */
-}
-
-/* Outer projects carousel bullets (custom classes) */
-.proj-pag {
-  margin-top: 4px;   /* tighter gap under card */
-  margin-bottom: 0;
-  display: flex;
-  justify-content: center;
-}
-
-.proj-pag .proj-bullet {
-  display: inline-block;      /* important: let width/height apply */
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
+.proj-pag .proj-bullet{
+  display: inline-block; width: 10px; height: 10px; border-radius: 50%;
   margin: 0 3px;
-  background: #667;          /* inactive gray */
-  opacity: 0.6;
+  background: #667; opacity: .6;
   transition: transform .2s ease, opacity .2s ease, background .2s ease;
 }
-
-.proj-pag .proj-bullet.proj-bullet-active {
-  background: var(--accent) !important;  /* yellow */
-  opacity: 1;
-  transform: scale(1.15);
+.proj-pag .proj-bullet.proj-bullet-active{
+  background: var(--color-accent);
+  opacity: 1; transform: scale(1.15);
 }
 
-/* Buttons container inside project cards */
-.proj-details .actions {
-  display: flex;
-  justify-content: space-between; /* even spacing between buttons */
-  gap: 16px;                      /* adjust spacing between buttons */
-  align-items: center;
-  margin-top: 12px;               /* extra space above the buttons */
+/* Outer nav buttons hover (blue) */
+.projects-compact .nav-wrap .proj-prev:hover,
+.projects-compact .nav-wrap .proj-next:hover{
+  color: var(--color-blue) !important;
+  border-color: var(--color-blue) !important;
+  background: transparent !important;
 }
 
-/* Sleek inline-style action buttons (like Resume link) */
-.action-link {
-  font-weight: 600;
-  color: var(--accent);
-  text-decoration: none;
-  font-size: 14px;
-  border-bottom: 1px solid transparent;
-  transition: all 0.2s ease;
+/* =========================================================
+   CONSISTENT CARD PADDING
+========================================================= */
+.about-card, #skills, #resume{ padding: 16px 16px 8px 12px; }
+@media (max-width: 640px){
+  .about-card, #skills, #resume{ padding: 16px 12px 8px; }
 }
 
-.action-link:hover {
-  border-bottom: 1px solid var(--accent);
-  opacity: 0.9;
-}
+/* === FINAL OVERRIDE: Project buttons + Resume link === */
+:root { --color-blue: #3b82f6; } /* blue on hover */
 
-/* Button row in project cards */
-.proj-details .actions {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  margin-top: 12px;
-}
-
-/* Project card buttons */
-/* Force project action buttons to be centered and yellow */
-.actions {
-  display: flex !important;
-  justify-content: center !important;  /* center both buttons */
-  gap: 16px !important;                /* even space between */
-  margin-top: 12px !important;
-}
-
-.actions .btn {
-  background: var(--accent) !important; /* yellow */
-  color: #111 !important;              /* dark text */
-  padding: 8px 16px !important;
-  border-radius: 10px !important;
-  font-weight: 600 !important;
-  text-decoration: none !important;
-  transition: transform 0.2s, opacity 0.2s !important;
-}
-
-.actions .btn:hover {
-  transform: scale(1.05);
-  opacity: 0.9;
-}
-
-/* Center the action row (beats older selectors) */
-.section.projects-compact .proj-card .proj-details .actions {
-  display: flex !important;
-  justify-content: center !important;
-  gap: 16px !important;         /* space between buttons */
-  margin-top: 12px !important;
-}
-
-/* Yellow project buttons, independent of .btn / Bootstrap */
-.section.projects-compact .proj-card .proj-details .actions a.project-btn {
-  background: var(--accent) !important;  /* yellow */
-  color: #111 !important;
-  padding: 8px 16px !important;
-  border-radius: 10px !important;
-  font-weight: 600 !important;
-  text-decoration: none !important;
-  border: none !important;
-  transition: transform .2s, opacity .2s;
-}
-
-.section.projects-compact .proj-card .proj-details .actions a.project-btn:hover {
-  transform: scale(1.05);
-  opacity: 0.9;
-}
-
-/* Force yellow buttons in project cards */
-.section.projects-compact .proj-card .proj-details .actions a.project-btn {
-  background-color: var(--accent) !important;  /* 🔥 force yellow */
-  color: #111 !important;
-  padding: 8px 16px !important;
-  border-radius: 10px !important;
-  font-weight: 600 !important;
-  text-decoration: none !important;
-  border: none !important;
-  transition: transform .2s, opacity .2s;
-  display: inline-block;
-  text-align: center;
-}
-
-.section.projects-compact .proj-card .proj-details .actions a.project-btn:hover {
-  transform: scale(1.05);
-  opacity: 0.9;
-}
-
-/* --- Fix: make project action buttons yellow & centered (non-destructive) --- */
-/* 🔥 Explicit styles for project action buttons (like dot fix) */
-.section.projects-compact .proj-card .proj-details .actions {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  margin-top: 12px;
-}
-
-.project-btn {
-  background-color: var(--color-accent) !important; /* yellow */
-  color: #111 !important;
-  padding: 8px 16px !important;
-  border-radius: 10px !important;
-  font-weight: 600 !important;
-  text-decoration: none !important;
-  border: none !important;
-  display: inline-block;
-  text-align: center;
-  transition: transform .2s, opacity .2s;
-}
-
-.project-btn:hover {
-  transform: scale(1.05);
-  opacity: 0.9;
-}
-
-/* 🔥 Force yellow project buttons, zero ambiguity */
-.section.projects-compact .proj-card .proj-details .actions a.project-btn {
-  background-color: #ffd166 !important; /* hard-coded yellow */
-  color: #111 !important;
-  padding: 8px 16px !important;
-  border-radius: 10px !important;
-  font-weight: 600 !important;
-  text-decoration: none !important;
-  border: none !important;
-  display: inline-block;
-  text-align: center;
-  transition: transform .2s, opacity .2s;
-}
-
-.section.projects-compact .proj-card .proj-details .actions {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  margin-top: 12px;
-}
-
-.section.projects-compact .proj-card .proj-details .actions a.project-btn:hover {
-  transform: scale(1.05);
-  opacity: 0.9;
-}
-
-/* 🔥 Unified sleek yellow links (Resume + Project actions) */
-.resume-link,
-.section.projects-compact .proj-card .proj-details .actions a.project-btn {
-  font-weight: 600;
-  color: var(--color-accent);
-  font-size: 14px;
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: transform 0.2s ease, opacity 0.2s ease, border-bottom-color 0.2s ease;
-  background: none;
-  padding: 0;
-  display: inline-block;
-}
-
-.resume-link:hover,
-.section.projects-compact .proj-card .proj-details .actions a.project-btn:hover {
-  border-bottom: 1px solid var(--color-accent);
-  opacity: 0.9;
-  transform: scale(1.05); /* subtle zoom */
-}
-
-/* Center & space project action links */
-.section.projects-compact .proj-card .proj-details .actions {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  margin-top: 12px;
-}
-
-/* 🔥 Unified sleek yellow links (Resume + Project actions) */
-.resume-link,
-.section.projects-compact .proj-card .proj-details .actions a.project-btn {
-  font-weight: 600;
-  color: var(--color-accent);
-  font-size: 14px;
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: transform 0.2s ease, opacity 0.2s ease, border-bottom-color 0.2s ease;
-  background: none;
-  padding: 0;
-  display: inline-block;
-}
-
-.resume-link:hover,
-.section.projects-compact .proj-card .proj-details .actions a.project-btn:hover {
-  border-bottom: 1px solid var(--color-accent);
-  opacity: 0.9;
-  transform: scale(1.05); /* subtle zoom */
-}
-
-/* Center & space project action links */
-.section.projects-compact .proj-card .proj-details .actions {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  margin-top: 12px;
-}
-
-/* 🔥 Remove leftover .btn styles from project links */
-.section.projects-compact .proj-card .proj-details .actions a.project-btn.btn {
-  all: unset;
-  font-weight: 600;
-  color: var(--color-accent);
-  font-size: 14px;
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: transform 0.2s ease, opacity 0.2s ease, border-bottom-color 0.2s ease;
-  cursor: pointer;
-  display: inline-block;
-}
-
-/* === Force project action links to match resume-link style === */
+/* Center the row & give even spacing */
 .section.projects-compact .proj-card .proj-details .actions {
   display: flex !important;
   justify-content: center !important;
@@ -525,124 +316,75 @@ p, .proj-meta, .proj-details p, .resume-cta span {
   margin-top: 12px !important;
 }
 
-.section.projects-compact .proj-card .proj-details .actions a.project-link {
-  background: none !important;
-  border: 0 !important;
-  padding: 0 !important;
-  display: inline-block !important;
-
-  font-weight: 600 !important;
-  font-size: 14px !important;
-  color: var(--color-accent) !important;
-  text-decoration: none !important;
-  border-bottom: 1px solid transparent !important;
-
-  transition: transform .2s ease, opacity .2s ease, border-bottom-color .2s ease !important;
-}
-
-.section.projects-compact .proj-card .proj-details .actions a.project-link:hover {
-  border-bottom: 1px solid var(--color-accent) !important;
-  opacity: .9 !important;
-  transform: scale(1.05) !important;
-}
-
-/* Kill any leftover button styling if an old class slips in */
-.section.projects-compact .proj-card .proj-details .actions a.project-link.btn,
-.section.projects-compact .proj-card .proj-details .actions a.project-link.link {
-  all: unset !important;
-  display: inline-block !important;
-  cursor: pointer !important;
-  font-weight: 600 !important;
-  font-size: 14px !important;
-  color: var(--color-accent) !important;
-  text-decoration: none !important;
-  border-bottom: 1px solid transparent !important;
-  transition: transform .2s ease, opacity .2s ease, border-bottom-color .2s ease !important;
-}
-
-/* === Clean slate for Project Links === */
-.actions {
-  display: flex !important;
-  justify-content: center !important;
-  gap: 24px !important;
-  margin-top: 12px !important;
-}
-
-.project-link {
-  all: unset; /* kill all inherited button styles */
+/* Default: yellow text, no underline, no button chrome */
+.section.projects-compact .proj-card .proj-details .actions a.project-btn,
+.resume-cta .resume-link {
+  all: unset; /* wipe old .btn/.link baggage */
   display: inline-block;
   cursor: pointer;
   font-weight: 600;
   font-size: 14px;
-  color: var(--color-accent);
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: transform .2s ease, opacity .2s ease, border-bottom-color .2s ease;
-}
-
-.project-link:hover {
-  border-bottom: 1px solid var(--color-accent);
-  opacity: 0.9;
-  transform: scale(1.05);
-}
-
-/* === Project Action Links (force styles) === */
-.section.projects-compact .proj-card .proj-details .actions a.project-link {
-  display: inline-block !important;
-  cursor: pointer !important;
-  font-weight: 600 !important;
-  font-size: 14px !important;
-  color: var(--color-accent) !important;
+  color: var(--color-accent, var(--accent)) !important;   /* yellow */
   text-decoration: none !important;
-  border-bottom: 1px solid transparent !important;
-  transition: transform .2s ease, opacity .2s ease, border-bottom-color .2s ease !important;
-}
-
-.section.projects-compact .proj-card .proj-details .actions a.project-link:hover {
-  border-bottom: 1px solid var(--color-accent) !important;
-  opacity: 0.9 !important;
-  transform: scale(1.1) !important;
-}
-
-/* 1) Blue token (once) */
-:root { --color-blue: #3b82f6; } /* Tailwind-ish blue */
-
-/* 2) Project links: hover = blue + scale */
-.section.projects-compact .proj-card .proj-details .actions a.project-link {
-  display: inline-block !important;
-  cursor: pointer !important;
-  font-weight: 600 !important;
-  font-size: 14px !important;
-  color: var(--color-accent) !important;           /* yellow by default */
-  text-decoration: none !important;
-  border-bottom: 1px solid transparent !important;
+  border-bottom: 2px solid transparent !important;        /* no underline by default */
   transition:
-    transform .2s ease,
-    opacity .2s ease,
+    color .2s ease,
     border-bottom-color .2s ease,
-    color .2s ease !important;
+    transform .2s ease !important;
+  -webkit-font-smoothing: antialiased;
 }
 
-.section.projects-compact .proj-card .proj-details .actions a.project-link:hover {
-  color: var(--color-blue) !important;             /* 🔵 hover blue */
-  border-bottom-color: var(--color-blue) !important;
-  opacity: 0.95 !important;
-  transform: scale(1.1) !important;
+/* Hover: blue text, yellow underline, subtle scale */
+.section.projects-compact .proj-card .proj-details .actions a.project-btn:hover,
+.resume-cta .resume-link:hover {
+  color: var(--color-blue) !important;                    /* blue text */
+  border-bottom-color: var(--color-accent, var(--accent)) !important; /* yellow underline */
+  transform: scale(1.05);
 }
 
-/* Project action buttons: sleek link style with hover effect */
-.project-btn {
-  display: inline-block;
-  font-weight: 600;
-  color: var(--color-accent); /* yellow text */
-  font-size: 14px;
+/* Optional: keyboard focus outline for accessibility */
+.section.projects-compact .proj-card .proj-details .actions a.project-btn:focus-visible,
+.resume-cta .resume-link:focus-visible {
+  outline: 2px solid var(--color-accent, var(--accent));
+  outline-offset: 2px;
+  border-bottom-color: var(--color-accent, var(--accent)) !important;
+}
+
+/* Make Highlights section muted gray */
+.proj-meta li strong {
+  color: var(--color-muted); /* gray labels for Highlights & Tech Stack */
+}
+
+/* Make text in Skill Pills muted gray */
+.pill {
+  color: var(--color-muted) !important; /* muted text inside skill pills */
+}
+
+/* Project meta labels (Highlights / Tech Stack) in white */
+.proj-meta li strong {
+  color: var(--color-text); /* white-ish for labels */
+}
+
+/* Project meta details in muted gray */
+.proj-meta li {
+  color: var(--color-muted); /* gray for details text */
+}
+
+/* Skill category headings (Languages, etc.) in white */
+.skill-group {
+  color: var(--color-text); /* white-ish for category titles */
+}
+
+/* Top navigation links: yellow + scale on hover */
+.topbar nav a {
+  color: var(--color-accent); /* yellow */
   text-decoration: none;
-  border-bottom: 2px solid transparent; /* no underline initially */
-  transition: color 0.2s ease, transform 0.2s ease, border-bottom-color 0.2s ease;
+  opacity: 0.95;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  display: inline-block; /* required for scaling */
 }
 
-.project-btn:hover {
-  color: #3b82f6; /* blue text on hover */
-  border-bottom-color: var(--color-accent); /* yellow underline */
-  transform: scale(1.05); /* slight scale-up */
+.topbar nav a:hover {
+  opacity: 1;
+  transform: scale(1.15); /* same scale as social icons */
 }
