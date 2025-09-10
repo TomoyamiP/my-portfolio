@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="/stylesheets/site.css">
     <!-- Google Fonts: Inter (body) + Raleway (headings) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Raleway:wght@600;700&display=swap" rel="stylesheet">
-    <!-- Swiper CSS (carousel) -->
+    <!-- Swiper CSS (carousels) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
-    <!-- Lightbox minimal styles (scoped here for simplicity) -->
+    <!-- Lightbox minimal styles -->
     <style>
       .lightbox {
         position: fixed; inset: 0;
@@ -43,93 +43,83 @@
       <button class="lb-close" type="button" aria-label="Close">Close ✕</button>
       <img id="lightbox-img" alt="">
     </div>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-    <!-- Swiper JS (carousel) -->
+    <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script>
+      // Footer year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
       document.addEventListener('DOMContentLoaded', () => {
-        // --- Per-project screenshot carousels ---
+        // ---------- OUTER: projects carousel (one slide per project)
+        new Swiper('.projects-swiper', {
+          loop: false,
+          speed: 500,
+          spaceBetween: 18,
+          slidesPerView: 1,
+          breakpoints: {
+            960:  { slidesPerView: 1.2 },
+            1200: { slidesPerView: 1.4 }
+          },
+          // ⬇️ important: disable drag on outer so inner swipers get the gesture
+          allowTouchMove: false,                 // <-- CHANGED
+          navigation: { nextEl: '.proj-next', prevEl: '.proj-prev' },
+          pagination: { el: '.proj-pag', clickable: true },
+          watchOverflow: true,
+          keyboard: { enabled: true }           // optional: arrow keys for projects
+        });
+
+        // ---------- INNER: per-project screenshots (2–3 up on larger screens)
         document.querySelectorAll('.shots-swiper').forEach((el) => {
           const pagEl = el.parentElement.querySelector('.shots-pag');
-
           new Swiper(el, {
             loop: false,
             speed: 400,
             spaceBetween: 10,
-            slidesPerView: 1,          // phones by default
+            slidesPerView: 1,            // phones
             breakpoints: {
               640:  { slidesPerView: 2 }, // tablets
-              1024: { slidesPerView: 3 }, // laptops/desktops
-              1440: { slidesPerView: 3 }  // keep 3 on big screens
+              1024: { slidesPerView: 3 }  // laptops/desktops
             },
-            pagination: pagEl ? { el: pagEl, clickable: true } : undefined
+            // ⬇️ important: mark inner swiper as nested
+            nested: true,                         // <-- CHANGED
+            pagination: pagEl ? { el: pagEl, clickable: true } : undefined,
+            watchOverflow: true
           });
         });
 
-        // --- Lightbox for screenshots ---
+        // ---------- LIGHTBOX
         const lb = document.getElementById('lightbox');
         const lbImg = document.getElementById('lightbox-img');
+
         const openLightbox = (src) => {
           lbImg.src = src;
           lb.classList.add('open');
           lb.setAttribute('aria-hidden', 'false');
         };
+
         const closeLightbox = () => {
           lb.classList.remove('open');
           lb.setAttribute('aria-hidden', 'true');
           setTimeout(() => { lbImg.src = ''; }, 150);
         };
+
+        // click any .shot to open
         document.body.addEventListener('click', (e) => {
           const img = e.target.closest('.shot');
           if (!img) return;
           const full = img.getAttribute('data-full') || img.getAttribute('src');
           if (full) openLightbox(full);
         });
+
+        // close on backdrop or close button
         lb.addEventListener('click', (e) => {
           if (e.target === lb || e.target.closest('.lb-close')) closeLightbox();
         });
+
+        // close on Esc
         document.addEventListener('keydown', (e) => {
           if (e.key === 'Escape' && lb.classList.contains('open')) closeLightbox();
         });
-      });
-    </script>
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        // INNER: per-project screenshot carousels (keep your existing block)
-        document.querySelectorAll('.shots-swiper').forEach((el) => {
-          const pagEl = el.parentElement.querySelector('.shots-pag');
-          new Swiper(el, {
-            loop: false,
-            speed: 400,
-            spaceBetween: 10,
-            nested: true,                 // <— important for nested swipers
-            slidesPerView: 1,
-            breakpoints: {
-              640:  { slidesPerView: 2 },
-              1024: { slidesPerView: 3 },
-              1440: { slidesPerView: 3 }
-            },
-            pagination: pagEl ? { el: pagEl, clickable: true } : undefined
-          });
-        });
-
-        // OUTER: projects carousel
-        new Swiper('.projects-swiper', {
-          loop: false,
-          speed: 500,
-          spaceBetween: 18,
-          slidesPerView: 1,
-          centeredSlides: false,
-          grabCursor: true,
-          // let inner swipers handle their own touch
-          nested: false,
-          navigation: { nextEl: '.proj-next', prevEl: '.proj-prev' },
-          pagination: { el: '.proj-pag', clickable: true }
-        });
-
-        // (your existing lightbox code stays as-is)
       });
     </script>
   </body>

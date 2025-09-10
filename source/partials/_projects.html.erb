@@ -1,0 +1,69 @@
+<section id="projects" class="section card-soft projects-compact">
+  <div class="section-head" style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+    <h2 style="margin:0;">Projects</h2>
+    <div class="nav-wrap" style="display:flex;align-items:center;gap:10px;">
+      <button class="proj-prev btn" aria-label="Previous">‹</button>
+      <button class="proj-next btn" aria-label="Next">›</button>
+    </div>
+  </div>
+  <!-- Outer carousel: one slide per project -->
+  <div class="swiper projects-swiper">
+    <div class="swiper-wrapper">
+      <% data.projects.each do |project| %>
+        <div class="swiper-slide">
+          <article class="proj-card flat">
+            <!-- Title -->
+            <div class="proj-min" style="padding-bottom: 8px;">
+              <h3><%= project.name %></h3>
+            </div>
+            <!-- Inner screenshots carousel -->
+            <div class="swiper shots-swiper">
+              <div class="swiper-wrapper">
+                <% (project.shots || []).each do |shot| %>
+                  <div class="swiper-slide">
+                    <img
+                      class="shot"
+                      src="<%= shot.thumb %>"
+                      data-full="<%= shot.full || shot.thumb %>"
+                      alt="<%= "#{project.name} screenshot" %>">
+                    </div>
+                  <% end %>
+                </div>
+                <div class="shots-pag"></div>
+              </div>
+              <!-- Role -->
+              <% if project.role %>
+                <div class="proj-min">
+                  <p class="role"><%= project.role %></p>
+                </div>
+              <% end %>
+              <!-- Details -->
+              <details class="proj-details">
+                <summary>Details</summary>
+                <% if project.details %>
+                  <p><%= project.details %></p>
+                <% end %>
+                <ul class="proj-meta">
+                  <% if project.highlights %>
+                    <li><strong>Highlights:</strong> <%= project.highlights %></li>
+                  <% end %>
+                  <% if project.stack %>
+                    <li><strong>Tech Stack:</strong> <%= project.stack %></li>
+                  <% end %>
+                </ul>
+                <div class="actions">
+                  <% if project.live_url && !project.live_url.empty? %>
+                    <a class="btn" href="<%= project.live_url %>" target="_blank" rel="noopener">Live demo</a>
+                  <% end %>
+                  <% if project.code_url && !project.code_url.empty? %>
+                    <a class="link" href="<%= project.code_url %>" target="_blank" rel="noopener">Code</a>
+                  <% end %>
+                </div>
+              </details>
+            </article>
+          </div>
+        <% end %>
+      </div>
+      <div class="proj-pag" style="margin-top:8px;"></div>
+    </div>
+  </section>
