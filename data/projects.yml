@@ -4,7 +4,7 @@
   details: "Led full product design in Figma (onboarding, check-ins, grievance, AI coach chat). Implemented the Harmony Coach AI with a custom persona system that adapts guidance to each user’s temperament."
   stack: "Ruby on Rails · Stimulus (JS) · Bootstrap · Cloudinary · OpenAI API · Heroku"
   live_url: "https://purecomm-44227c50794a.herokuapp.com/"
-  code_url: "https://github.com/your-username/purecomm"
+  code_url: "https://github.com/TomoyamiP/purecomm"
   shots:
     - thumb: "https://res.cloudinary.com/dt4jctqz1/image/upload/v1757422983/IMG_4349_iamsgm.png"
       full:  "https://res.cloudinary.com/dt4jctqz1/image/upload/v1757422983/IMG_4349_iamsgm.png"

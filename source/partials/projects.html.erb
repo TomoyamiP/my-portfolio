@@ -23,8 +23,8 @@
                   <div class="swiper-slide">
                     <img
                       class="shot"
-                      src="<%= shot.thumb %>"
-                      data-full="<%= shot.full || shot.thumb %>"
+                      src="<%= shot['thumb'] || shot[:thumb] %>"
+                      data-full="<%= shot['full'] || shot[:full] || shot['thumb'] || shot[:thumb] %>"
                       alt="<%= "#{project.name} screenshot" %>">
                     </div>
                   <% end %>
@@ -51,12 +51,13 @@
                     <li><strong>Tech Stack:</strong> <%= project.stack %></li>
                   <% end %>
                 </ul>
+                <!-- Yellow, centered action buttons -->
                 <div class="actions">
-                  <% if project.live_url && !project.live_url.empty? %>
-                    <a class="btn" href="<%= project.live_url %>" target="_blank" rel="noopener">Live demo</a>
+                  <% if project.live_url.present? %>
+                    <a class="project-link" href="<%= project.live_url %>" target="_blank" rel="noopener">Live demo</a>
                   <% end %>
-                  <% if project.code_url && !project.code_url.empty? %>
-                    <a class="link" href="<%= project.code_url %>" target="_blank" rel="noopener">Code</a>
+                  <% if project.code_url.present? %>
+                    <a class="project-link" href="<%= project.code_url %>" target="_blank" rel="noopener">Code</a>
                   <% end %>
                 </div>
               </details>
@@ -64,6 +65,7 @@
           </div>
         <% end %>
       </div>
+      <!-- Outer carousel pagination -->
       <div class="proj-pag" style="margin-top:8px;"></div>
     </div>
   </section>
