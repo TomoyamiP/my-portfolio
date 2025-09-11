@@ -189,7 +189,6 @@ p, .proj-meta, .proj-details p, .resume-cta span{ color: var(--color-muted); }
 .resume-link:hover,
 .section.projects-compact .proj-card .proj-details .actions a.project-btn:hover{
   color: var(--color-blue);                   /* blue text on hover */
-  border-bottom-color: var(--color-accent);   /* yellow underline on hover */
   transform: scale(1.05);
   opacity: .95;
 }
@@ -265,12 +264,23 @@ p, .proj-meta, .proj-details p, .resume-cta span{ color: var(--color-muted); }
 }
 
 /* Shots pagination (default Swiper bullets) */
-.shots-pag{ margin-top: 8px; display: flex; justify-content: center; }
-.shots-pag .swiper-pagination-bullet{
-  background: #667; opacity: .6; transition: all .2s;
+/* Shots pagination (default Swiper bullets) */
+.shots-pag {
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
 }
-.shots-pag .swiper-pagination-bullet-active{
-  background: var(--color-accent); opacity: 1; transform: scale(1.1);
+
+.shots-pag .swiper-pagination-bullet {
+  background: #667; /* muted gray inactive */
+  opacity: .6;
+  transition: all .2s;
+}
+
+.shots-pag .swiper-pagination-bullet-active {
+  background: #3b82f6; /* 🔵 blue for active screenshot dots */
+  opacity: 1;
+  transform: scale(1.1);
 }
 
 /* Outer projects pagination (custom bullets via renderBullet) */
@@ -338,7 +348,6 @@ p, .proj-meta, .proj-details p, .resume-cta span{ color: var(--color-muted); }
 .section.projects-compact .proj-card .proj-details .actions a.project-btn:hover,
 .resume-cta .resume-link:hover {
   color: var(--color-blue) !important;                    /* blue text */
-  border-bottom-color: var(--color-accent, var(--accent)) !important; /* yellow underline */
   transform: scale(1.05);
 }
 
@@ -347,7 +356,6 @@ p, .proj-meta, .proj-details p, .resume-cta span{ color: var(--color-muted); }
 .resume-cta .resume-link:focus-visible {
   outline: 2px solid var(--color-accent, var(--accent));
   outline-offset: 2px;
-  border-bottom-color: var(--color-accent, var(--accent)) !important;
 }
 
 /* Make Highlights section muted gray */
