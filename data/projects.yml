@@ -20,7 +20,7 @@
       full:  "https://res.cloudinary.com/dt4jctqz1/image/upload/v1757422725/IMG_4341_fh1vxu.png"
 
 - name: LyricLab
-  role: "Product & Frontend · UX (Landing Page, Image-to-Lyrics)"
+  role: "Product & Frontend · UX"
   highlights: "AI lyric generation · upload images for inspiration · LyriBot songwriting coach · mood and genre tagging · searchable song library."
   details: "Designed and implemented the landing page and full user experience in Figma. Built the image-to-lyrics feature, allowing users to upload an image to generate custom song lyrics."
   stack: "Ruby on Rails · Stimulus (JS) · OpenAI API · Active Storage · Cloudinary · Bootstrap · Heroku"
