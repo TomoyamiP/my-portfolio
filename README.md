@@ -20,7 +20,6 @@ Built to highlight my work in Ruby on Rails, JavaScript, SCSS, and AI integratio
 - **Libraries:** Swiper.js (carousels), Lightbox (project screenshots)  
 - **Build Tool:** [Middleman](https://middlemanapp.com/) (static site generator)  
 - **Design:** Figma for wireframes and UI polish  
-- **Hosting:** GitHub Pages  
 
 ---
 
@@ -28,9 +27,8 @@ Built to highlight my work in Ruby on Rails, JavaScript, SCSS, and AI integratio
 - **PureComm** – Couples’ communication app with AI coach  
 - **LyricLab** – AI-powered songwriting assistant  
 - **Watch-List** – Movie discovery and bookmarking app  
-- **Doggy Race** – Browser game with animated dogs  
-- And more…  
-
+- and more to come...
+  
 ---
 
 ## Resume
@@ -47,10 +45,5 @@ Let’s connect:
 
 ---
 
-## Setup & Development
-If you want to run the project locally:
-```bash
-git clone https://github.com/TomoyamiP/my-portfolio.git
-cd my-portfolio
-bundle install
-middleman server
+## License
+This project is licensed under the [MIT License](./LICENSE).
