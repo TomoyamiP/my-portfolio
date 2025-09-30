@@ -31,13 +31,7 @@
                 </div>
                 <div class="shots-pag"></div>
               </div>
-              <!-- Role -->
-              <% if project.role %>
-                <div class="proj-min">
-                  <p class="role"><%= project.role %></p>
-                </div>
-              <% end %>
-              <!-- Details -->
+              <!-- Details (moved up to be right under screenshots) -->
               <details class="proj-details">
                 <summary>Details</summary>
                 <% if project.details %>
@@ -61,6 +55,12 @@
                   <% end %>
                 </div>
               </details>
+              <!-- Role (moved below details) -->
+              <% if project.role %>
+                <div class="proj-min">
+                  <p class="role"><%= project.role %></p>
+                </div>
+              <% end %>
             </article>
           </div>
         <% end %>

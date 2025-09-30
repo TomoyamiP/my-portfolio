@@ -131,7 +131,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .socials { display: flex; gap: 12px; }
 .socials a svg {
-  width: 20px; height: 20px;
+  width: 32px; height: 32px;
   opacity: .9;
   transition: transform .2s, opacity .2s;
 }
@@ -165,7 +165,7 @@ h1, h2, h3, h4, h5, h6 {
 ========================================================= */
 .skill-group {
   margin: 16px 0 8px;
-  font-size: var(--fs-small);
+  font-size: 16px;
   font-weight: 600;
   color: #00c853; /* green */
   letter-spacing: .5px;
@@ -178,7 +178,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid var(--color-purple);
   background: rgba(255,255,255,.02);
   color: var(--color-muted) !important;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 /* =========================================================
@@ -361,4 +361,57 @@ h1, h2, h3, h4, h5, h6 {
 /* Make sure the first section doesn’t add extra space */
 .section:first-of-type, #about.section {
   margin-top: 0 !important;
+}
+
+/* =========================================================
+   RESUME CARD + CONNECT ROW
+========================================================= */
+
+/* "Full story on my career" (gray 16px) */
+.resume-cta span {
+  font-size: 16px;
+  color: var(--color-muted);
+}
+
+/* "view resume" link = blue 16px */
+.resume-cta .resume-link {
+  font-size: 16px;
+  color: var(--color-blue) !important;
+  text-decoration: none;
+  transition: transform .2s ease;
+}
+.resume-cta .resume-link:hover {
+  transform: scale(1.05);
+}
+
+/* Row: "Let’s connect" (white) + icons to the right */
+.resume-connect-row {
+  margin-top: 24px;   /* more space above this row */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.resume-connect {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text);   /* white/off-white */
+  margin: 0;
+}
+
+.resume-socials {
+  display: flex;
+  gap: 20px;   /* spacing between icons */
+}
+
+.resume-socials a svg {
+  width: 28px;
+  height: 28px;
+  opacity: .9;
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+.resume-socials a:hover svg {
+  transform: scale(1.15);
+  opacity: 1;
 }
