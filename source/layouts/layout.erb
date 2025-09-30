@@ -118,6 +118,15 @@
         document.addEventListener('keydown', (e) => {
           if (e.key === 'Escape' && lb.classList.contains('open')) closeLightbox();
         });
+
+        // ----- Scroll opened <details> into view (center)
+      document.querySelectorAll('.proj-details').forEach((d) => {
+        d.addEventListener('toggle', function () {
+          if (this.open) {
+      this.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        });
+      });
       });
     </script>
     <style>

@@ -86,6 +86,11 @@ p, .proj-meta, .proj-details p, .resume-cta span{ color: var(--color-muted); }
   padding: 12px 16px;
   display: flex; align-items: center; justify-content: space-between;
   margin: 8px 0 16px;
+
+  /* Sticky banner */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 .topbar .name{ font-weight: 800; letter-spacing: .2px; }
 .topbar nav a{
@@ -166,7 +171,7 @@ p, .proj-meta, .proj-details p, .resume-cta span{ color: var(--color-muted); }
   border-radius: 999px;
   border: 1px solid var(--color-line);
   background: rgba(255,255,255,.02);
-  color: var(--color-text); /* pill text = white-ish */
+  color: var(--color-muted) !important; /* muted text inside skill pills */
   font-size: 13px;
 }
 
@@ -264,19 +269,16 @@ p, .proj-meta, .proj-details p, .resume-cta span{ color: var(--color-muted); }
 }
 
 /* Shots pagination (default Swiper bullets) */
-/* Shots pagination (default Swiper bullets) */
 .shots-pag {
   margin-top: 8px;
   display: flex;
   justify-content: center;
 }
-
 .shots-pag .swiper-pagination-bullet {
   background: #667; /* muted gray inactive */
   opacity: .6;
   transition: all .2s;
 }
-
 .shots-pag .swiper-pagination-bullet-active {
   background: #3b82f6; /* 🔵 blue for active screenshot dots */
   opacity: 1;
@@ -358,41 +360,31 @@ p, .proj-meta, .proj-details p, .resume-cta span{ color: var(--color-muted); }
   outline-offset: 2px;
 }
 
-/* Make Highlights section muted gray */
-.proj-meta li strong {
-  color: var(--color-muted); /* gray labels for Highlights & Tech Stack */
-}
-
-/* Make text in Skill Pills muted gray */
-.pill {
-  color: var(--color-muted) !important; /* muted text inside skill pills */
-}
-
-/* Project meta labels (Highlights / Tech Stack) in white */
-.proj-meta li strong {
-  color: var(--color-text); /* white-ish for labels */
-}
-
 /* Project meta details in muted gray */
 .proj-meta li {
   color: var(--color-muted); /* gray for details text */
 }
 
+/* Project meta labels (Highlights / Tech Stack) in white */
+.proj-meta li strong {
+  color: var(--color-text);
+}
+
 /* Skill category headings (Languages, etc.) in white */
 .skill-group {
-  color: var(--color-text); /* white-ish for category titles */
+  color: var(--color-text);
 }
 
 /* Top navigation links: yellow + scale on hover */
 .topbar nav a {
-  color: var(--color-accent); /* yellow */
+  color: var(--color-accent);
   text-decoration: none;
   opacity: 0.95;
   transition: transform 0.2s ease, opacity 0.2s ease;
-  display: inline-block; /* required for scaling */
+  display: inline-block;
 }
 
 .topbar nav a:hover {
   opacity: 1;
-  transform: scale(1.15); /* same scale as social icons */
+  transform: scale(1.15);
 }
