@@ -206,17 +206,22 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom-color: rgba(233,237,241,.6);
 }
 
-/* Resume CTA: keep blue and non-changing color */
-.resume-cta { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+/* Resume link = same base color as social icons */
 .resume-cta .resume-link {
   all: unset;
-  display: inline-block; cursor: pointer;
-  font-weight: 600; font-size: 14px;
-  color: var(--color-blue) !important;
-  border-bottom: 2px solid transparent !important;
-  transition: transform .2s ease !important;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  color: #00c853 !important;   /* green */
+  transition: transform .2s ease, opacity .2s ease !important;
 }
-.resume-cta .resume-link:hover { transform: scale(1.05); }
+
+/* Hover: same hover effect as icons */
+.resume-cta .resume-link:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
 
 /* =========================================================
    PROJECTS / CAROUSELS
@@ -312,8 +317,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 .section.projects-compact .proj-card .proj-details .actions a.project-btn {
   all: unset; display: inline-block; cursor: pointer;
-  font-weight: 600; font-size: 14px;
-  color: var(--color-blue) !important;
+  font-weight: 600; font-size: 16px;
+  color: #00c853 !important;   /* green */
   transition: transform .2s ease !important;
 }
 .section.projects-compact .proj-card .proj-details .actions a.project-btn:hover { transform: scale(1.05); }
@@ -376,7 +381,7 @@ h1, h2, h3, h4, h5, h6 {
 /* "view resume" link = blue 16px */
 .resume-cta .resume-link {
   font-size: 16px;
-  color: var(--color-blue) !important;
+  color: var(--color-accent) !important;   /* yellow */
   text-decoration: none;
   transition: transform .2s ease;
 }
