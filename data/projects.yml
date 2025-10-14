@@ -36,6 +36,19 @@
     - thumb: "https://res.cloudinary.com/dt4jctqz1/image/upload/v1757422983/IMG_4347_dc3jix.png"
       full:  "https://res.cloudinary.com/dt4jctqz1/image/upload/v1757422983/IMG_4347_dc3jix.png"
 
+- name: JITM Tracks
+  role: "Full-Stack Developer · Data Aggregation App"
+  highlights: "Fetch & display daily KEXP 'John in the Morning' playlists · filter by timeframe (30, 90, year, all-time) · background job for data backfill."
+  details: "Built a Rails app that aggregates and displays songs played on KEXP’s 'John in the Morning' show. Implemented background jobs to fetch and store track data, added a dynamic Top 40 view with Turbo frames, and deployed to Heroku with a Postgres database. Designed a minimal, music-themed UI for quick access to daily and historical playlists."
+  stack: "Ruby on Rails · Turbo (Hotwire) · PostgreSQL · Sidekiq (Async) · SCSS · Heroku"
+  live_url: "https://jitm-tracks-41d8faeef664.herokuapp.com/"
+  code_url: "https://github.com/TomoyamiP/jitm-tracks"
+  shots:
+    - thumb: "https://res.cloudinary.com/dt4jctqz1/image/upload/v1760443043/Screenshot_2025-10-14_at_20.53.14_rt8lac.png"
+      full:  "https://res.cloudinary.com/dt4jctqz1/image/upload/v1760443043/Screenshot_2025-10-14_at_20.53.14_rt8lac.png"
+    - thumb: "https://res.cloudinary.com/dt4jctqz1/image/upload/v1760443061/Screenshot_2025-10-14_at_20.54.31_wpbxfu.png"
+      full:  "https://res.cloudinary.com/dt4jctqz1/image/upload/v1760443061/Screenshot_2025-10-14_at_20.54.31_wpbxfu.png"
+
 - name: Watch-List
   role: "Full-Stack Developer · CRUD App"
   highlights: "Search & bookmark movies · custom movie details pages · add personal comments · responsive card layout."
