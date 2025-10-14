@@ -44,10 +44,12 @@
   live_url: "https://jitm-tracks-41d8faeef664.herokuapp.com/"
   code_url: "https://github.com/TomoyamiP/jitm-tracks"
   shots:
-    - thumb: "https://res.cloudinary.com/dt4jctqz1/image/upload/v1760443043/Screenshot_2025-10-14_at_20.53.14_rt8lac.png"
-      full:  "https://res.cloudinary.com/dt4jctqz1/image/upload/v1760443043/Screenshot_2025-10-14_at_20.53.14_rt8lac.png"
-    - thumb: "https://res.cloudinary.com/dt4jctqz1/image/upload/v1760443061/Screenshot_2025-10-14_at_20.54.31_wpbxfu.png"
-      full:  "https://res.cloudinary.com/dt4jctqz1/image/upload/v1760443061/Screenshot_2025-10-14_at_20.54.31_wpbxfu.png"
+    - thumb: "https://res.cloudinary.com/dt4jctqz1/image/upload/v1760443493/Screenshot_2025-10-14_at_21.03.44_krddbf.png"
+      full:  "https://res.cloudinary.com/dt4jctqz1/image/upload/v1760443493/Screenshot_2025-10-14_at_21.03.44_krddbf.png"
+    - thumb: "https://res.cloudinary.com/dt4jctqz1/image/upload/v1760443493/Screenshot_2025-10-14_at_21.03.44_krddbf.png"
+      full:  "https://res.cloudinary.com/dt4jctqz1/image/upload/v1760443493/Screenshot_2025-10-14_at_21.03.44_krddbf.png"
+    - thumb: "https://res.cloudinary.com/dt4jctqz1/image/upload/v1760443506/Screenshot_2025-10-14_at_21.04.18_akfycv.png"
+      full:  "https://res.cloudinary.com/dt4jctqz1/image/upload/v1760443506/Screenshot_2025-10-14_at_21.04.18_akfycv.png"
 
 - name: Watch-List
   role: "Full-Stack Developer · CRUD App"
