@@ -1,3 +1,22 @@
+- name: MapTheWalls
+  role: "Lead Developer · Product & UX"
+  highlights: "Interactive map · clustered graffiti markers · photo uploads · responsive map UI · cultural archive focus."
+  details: "Built an interactive, map-based archive of graffiti and street art across Tokyo and beyond. Designed the experience to encourage noticing and documenting urban visual culture, with clustered markers, photo popups, and a mobile-first map layout."
+  stack: "React · TypeScript · Vite · Leaflet · Supabase · Netlify"
+  live_url: "https://mapthewalls.netlify.app/"
+  code_url: "https://github.com/TomoyamiP/mapthewalls"
+  shots:
+    - thumb: "https://res.cloudinary.com/dbkxj9x41/image/upload/v1766436896/apple-touch-icon_unptys.png"
+      full:  "https://res.cloudinary.com/dbkxj9x41/image/upload/v1766436576/mapthewalls.netlify.app__g1eq2k.png"
+    - thumb: "https://res.cloudinary.com/dbkxj9x41/image/upload/v1766436570/mapthewalls.netlify.app__1_ho8ii0.png"
+      full:  "https://res.cloudinary.com/dbkxj9x41/image/upload/v1766436570/mapthewalls.netlify.app__1_ho8ii0.png"
+    - thumb: "https://res.cloudinary.com/dbkxj9x41/image/upload/v1766436564/mapthewalls.netlify.app__2_o6hj4r.png"
+      full:  "https://res.cloudinary.com/dbkxj9x41/image/upload/v1766436564/mapthewalls.netlify.app__2_o6hj4r.png"
+    - thumb: "https://res.cloudinary.com/dbkxj9x41/image/upload/v1766438318/mapthewalls.netlify.app__4_cycaxo.png"
+      full:  "https://res.cloudinary.com/dbkxj9x41/image/upload/v1766438318/mapthewalls.netlify.app__4_cycaxo.png"
+    - thumb: "https://res.cloudinary.com/dbkxj9x41/image/upload/v1766437703/mapthewalls.netlify.app__hhjvvt.png"
+      full:  "https://res.cloudinary.com/dbkxj9x41/image/upload/v1766437703/mapthewalls.netlify.app__hhjvvt.png"
+
 - name: PureComm
   role: "Lead Developer · Product & UX (Figma)"
   highlights: "Daily mood check-ins · private grievance drop · AI coach with adjustable tone · revisit reminders · severity & tag system · demo-friendly deterministic seeds."
