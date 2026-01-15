@@ -420,3 +420,19 @@ h1, h2, h3, h4, h5, h6 {
   transform: scale(1.15);
   opacity: 1;
 }
+
+/* =========================================================
+   TOP NAV NAME + LINK OVERRIDES
+========================================================= */
+
+/* Name on the left = white and slightly larger */
+.topbar .name {
+  color: var(--color-text); /* white / off-white */
+  font-size: 22px;
+  line-height: 1;
+}
+
+/* Nav links = green */
+.topbar nav a {
+  color: #00c853;
+}
