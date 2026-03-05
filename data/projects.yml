@@ -38,6 +38,21 @@
     - thumb: "https://res.cloudinary.com/dt4jctqz1/image/upload/v1757422725/IMG_4341_fh1vxu.png"
       full:  "https://res.cloudinary.com/dt4jctqz1/image/upload/v1757422725/IMG_4341_fh1vxu.png"
 
+- name: JITM Tracks
+  role: "Full-Stack Developer · Data Aggregation App"
+  highlights: "Fetch & display daily KEXP 'John in the Morning' playlists · filter by timeframe (30, 90, year, all-time) · background job for data backfill."
+  details: "Built a Rails app that aggregates and displays songs played on KEXP’s 'John in the Morning' show. Implemented background jobs to fetch and store track data, added a dynamic Top 40 view with Turbo frames, and deployed to Heroku with a Postgres database. Designed a minimal, music-themed UI for quick access to daily and historical playlists."
+  stack: "Ruby on Rails · Turbo (Hotwire) · PostgreSQL · Sidekiq (Async) · SCSS · Heroku"
+  live_url: "https://jitm-tracks-41d8faeef664.herokuapp.com/"
+  code_url: "https://github.com/TomoyamiP/jitm-tracks"
+  shots:
+    - thumb: "https://res.cloudinary.com/dt4jctqz1/image/upload/v1760443493/Screenshot_2025-10-14_at_21.03.44_krddbf.png"
+      full:  "https://res.cloudinary.com/dt4jctqz1/image/upload/v1760443493/Screenshot_2025-10-14_at_21.03.44_krddbf.png"
+    - thumb: "https://res.cloudinary.com/dt4jctqz1/image/upload/v1760443493/Screenshot_2025-10-14_at_21.03.44_krddbf.png"
+      full:  "https://res.cloudinary.com/dt4jctqz1/image/upload/v1760443493/Screenshot_2025-10-14_at_21.03.44_krddbf.png"
+    - thumb: "https://res.cloudinary.com/dt4jctqz1/image/upload/v1760443506/Screenshot_2025-10-14_at_21.04.18_akfycv.png"
+      full:  "https://res.cloudinary.com/dt4jctqz1/image/upload/v1760443506/Screenshot_2025-10-14_at_21.04.18_akfycv.png"
+
 - name: LyricLab
   role: "Product & Frontend · UX"
   highlights: "AI lyric generation · upload images for inspiration · LyriBot songwriting coach · mood and genre tagging · searchable song library."
@@ -54,37 +69,3 @@
       full:  "https://res.cloudinary.com/dt4jctqz1/image/upload/v1757422983/IMG_4348_glcg2m.png"
     - thumb: "https://res.cloudinary.com/dt4jctqz1/image/upload/v1757422983/IMG_4347_dc3jix.png"
       full:  "https://res.cloudinary.com/dt4jctqz1/image/upload/v1757422983/IMG_4347_dc3jix.png"
-
-- name: JITM Tracks
-  role: "Full-Stack Developer · Data Aggregation App"
-  highlights: "Fetch & display daily KEXP 'John in the Morning' playlists · filter by timeframe (30, 90, year, all-time) · background job for data backfill."
-  details: "Built a Rails app that aggregates and displays songs played on KEXP’s 'John in the Morning' show. Implemented background jobs to fetch and store track data, added a dynamic Top 40 view with Turbo frames, and deployed to Heroku with a Postgres database. Designed a minimal, music-themed UI for quick access to daily and historical playlists."
-  stack: "Ruby on Rails · Turbo (Hotwire) · PostgreSQL · Sidekiq (Async) · SCSS · Heroku"
-  live_url: "https://jitm-tracks-41d8faeef664.herokuapp.com/"
-  code_url: "https://github.com/TomoyamiP/jitm-tracks"
-  shots:
-    - thumb: "https://res.cloudinary.com/dt4jctqz1/image/upload/v1760443493/Screenshot_2025-10-14_at_21.03.44_krddbf.png"
-      full:  "https://res.cloudinary.com/dt4jctqz1/image/upload/v1760443493/Screenshot_2025-10-14_at_21.03.44_krddbf.png"
-    - thumb: "https://res.cloudinary.com/dt4jctqz1/image/upload/v1760443493/Screenshot_2025-10-14_at_21.03.44_krddbf.png"
-      full:  "https://res.cloudinary.com/dt4jctqz1/image/upload/v1760443493/Screenshot_2025-10-14_at_21.03.44_krddbf.png"
-    - thumb: "https://res.cloudinary.com/dt4jctqz1/image/upload/v1760443506/Screenshot_2025-10-14_at_21.04.18_akfycv.png"
-      full:  "https://res.cloudinary.com/dt4jctqz1/image/upload/v1760443506/Screenshot_2025-10-14_at_21.04.18_akfycv.png"
-
-- name: Watch-List
-  role: "Full-Stack Developer · CRUD App"
-  highlights: "Search & bookmark movies · custom movie details pages · add personal comments · responsive card layout."
-  details: "Built a movie watchlist web app from scratch with full CRUD functionality. Integrated external APIs for movie data, implemented a clean card-based UI, and added bookmarking and adding picture features."
-  stack: "Ruby on Rails · Stimulus (JS) · Bootstrap · PostgreSQL · Cloudinary · Heroku"
-  live_url: "https://tomoyamip-movie-list-c5ae1d5ff7d3.herokuapp.com/"
-  code_url: "https://github.com/TomoyamiP/rails-watch-list"
-  shots:
-    - thumb: "https://res.cloudinary.com/dt4jctqz1/image/upload/v1757518638/Screenshot_2025-09-11_at_0.34.56_fhjqkf.png"
-      full:  "https://res.cloudinary.com/dt4jctqz1/image/upload/v1757518638/Screenshot_2025-09-11_at_0.34.56_fhjqkf.png"
-    - thumb: "https://res.cloudinary.com/dt4jctqz1/image/upload/v1757518638/Screenshot_2025-09-11_at_0.35.13_ujwsj3.png"
-      full:  "https://res.cloudinary.com/dt4jctqz1/image/upload/v1757518638/Screenshot_2025-09-11_at_0.35.13_ujwsj3.png"
-    - thumb: "https://res.cloudinary.com/dt4jctqz1/image/upload/v1757518636/Screenshot_2025-09-11_at_0.33.30_r9jgwr.png"
-      full:  "https://res.cloudinary.com/dt4jctqz1/image/upload/v1757518636/Screenshot_2025-09-11_at_0.33.30_r9jgwr.png"
-    - thumb: "https://res.cloudinary.com/dt4jctqz1/image/upload/v1757518636/Screenshot_2025-09-11_at_0.33.39_g3jwxo.png"
-      full:  "https://res.cloudinary.com/dt4jctqz1/image/upload/v1757518636/Screenshot_2025-09-11_at_0.33.39_g3jwxo.png"
-    - thumb: "https://res.cloudinary.com/dt4jctqz1/image/upload/v1757518636/Screenshot_2025-09-11_at_0.28.20_k8yrm1.png"
-      full:  "https://res.cloudinary.com/dt4jctqz1/image/upload/v1757518636/Screenshot_2025-09-11_at_0.28.20_k8yrm1.png"
